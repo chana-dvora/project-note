@@ -1,0 +1,9 @@
+Detected Notes:
+G - Duration: 43.00 seconds
+F - Duration: 1.00 seconds
+E - Duration: 3.00 seconds
+F - Duration: 1.00 seconds
+E - Duration: 2.00 seconds
+F - Duration: 1.00 seconds
+E - Duration: 96.00 seconds
+F# - Duration: 1.00 seconds
