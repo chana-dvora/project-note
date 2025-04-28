@@ -78,27 +78,38 @@ function analyze_audio(filePath)
     % ... (הערות על הצגת זיהוי תווים הוסרו) ...
 
     % דחיסת התווים לפי שינוי ומעקב אחר משך הזמן
-    compressed_notes = {};     % רשימה חדשה לתווים ולמשך הזמן שלהם
-    durations_windows = [];      % רשימת משכים בחלונות
+    % נניח ש-S הוא מטריצת הספקטרוגרמה אחרי חישוב FFT
+    % detected_notes הוא תא של מחרוזות של שמות התווים
+   beatDuration = 0.5; % נניח קצב של 120 BPM (60/120 = 0.5 שניות 
+    compressed_notes = {};
+    durations_windows = [];
+
+    silence_threshold = 0.05; % ערך עוצמה מתחתיו נחשב שתיקה
     if ~isempty(detected_notes)
-        current_note = detected_notes{1};      % התו הראשון
-        count = 1;      % מונה משך התו הנוכחי
+        current_note = detected_notes{1};
+        current_duration = 1;
 
         for i = 2:length(detected_notes)
-            if strcmp(detected_notes{i}, current_note)      % אם התו זהה לקודם, הגדל את המונה
-                count = count + 1;
-            else       % אם התו שונה, שמור את התו והמשך
+            current_magnitude = max(abs(S(:, i)));   % העוצמה בחלון הנוכחי
+
+            % בדיקה: אם אותו תו וגם אין שתיקה => ממשיכים את התו
+            if strcmp(detected_notes{i}, current_note) && current_magnitude > silence_threshold
+                current_duration = current_duration + 1;
+            else
+                % אחרת: סוגרים תו ומתחילים חדש
                 compressed_notes{end+1} = current_note;
-                durations_windows(end+1) = count;      % משך התו בחלונות
-                current_note = detected_notes{i};      % עדכון התו הנוכחי
-                count = 1;      % אתחול מונה למשך התו החדש
+                durations_windows(end+1) = current_duration;
+
+                current_note = detected_notes{i};
+                current_duration = 1;
             end
         end
 
-        % הוסף את התו האחרון לרשימה
+        % הוספת התו האחרון
         compressed_notes{end+1} = current_note;
-        durations_windows(end+1) = count;
+        durations_windows(end+1) = current_duration;
     end
+
 
     % הצגת תהליך דחיסת התווים ומעקב אחר משך הזמן
     disp('תווים דחוסים:');
@@ -143,6 +154,33 @@ function analyze_audio(filePath)
             disp(['תו: ', note, ' (', num2str(duration_seconds), ' שניות)']);
         end
     end
+
+
+final_classified_notes = {};
+final_durations_seconds = [];
+
+for i = 1:length(compressed_notes)
+    note = compressed_notes{i};
+    duration_seconds = durations_windows(i) * (window - overlap) / sampleRate; % חישוב זמן בשניות
+
+    if duration_seconds > 0.05
+        % נניח ש-beatDuration הוא משך הפעימה המשוער בשניות
+        halfNoteDurationThreshold = beatDuration * 1.8; % סף לזיהוי תו חצי (קצת גמישות)
+        quarterNoteDuration = beatDuration * 0.9; % משך זמן משוער של רבע
+
+        if duration_seconds >= halfNoteDurationThreshold
+            % פיצול ל-2 תווי רבע
+            final_classified_notes{end+1} = note;
+            final_durations_seconds(end+1) = quarterNoteDuration;
+            final_classified_notes{end+1} = note;
+            final_durations_seconds(end+1) = quarterNoteDuration;
+        else
+            final_classified_notes{end+1} = note;
+            final_durations_seconds(end+1) = duration_seconds;
+        end
+        disp(['תו: ', note, ' (', num2str(duration_seconds), ' שניות)']);
+    end
+end
 
     % כתיבת התוצאות לקובץ classified_notes.txt (ללא סוג התו)
     [fileDir, ~, ~] = fileparts(filePath);
@@ -195,10 +233,10 @@ function [note, octave] = frequency_to_note(freq)
     % תדרי רפרנס
     A4 = 440;
     note_names = {'C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B'};
-    
+
     % חישוב מרחק חצי-טון מהתו A4
     n = round(12 * log2(freq / A4));
-    
+
     % חישוב תו ואוקטבה
     note_index = mod(n + 9, 12) + 1;  % A4 = index 10 → C = 1
     note = note_names{note_index};
