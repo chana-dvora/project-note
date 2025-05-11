@@ -2,18 +2,17 @@ const fs = require('fs');
 const path = require('path');
 const express = require('express');
 const multer = require('multer');
-const cors = require('cors'); // הוספת cors
+const cors = require('cors'); 
 const { exec } = require('child_process');
 
 const app = express();
 
-// הוספת CORS לכל הבקשות
 app.use(cors());
 
 // הגדרת multer לאחסון הקבצים בתיקיית uploads
 const upload = multer({ dest: 'uploads/' });
 
-app.use(express.json()); // לאפשר קריאת JSON ב-body של הבקשות
+app.use(express.json());
 
 app.post('/upload', upload.single('audio'), (req, res) => {
 

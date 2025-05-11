@@ -1,1 +1,56 @@
-{"notes":[{"note":"G","duration":0.47600907029478456},{"note":"E","duration":0.45},{"note":"E","duration":0.45},{"note":"F","duration":0.47600907029478456},{"note":"D","duration":0.45},{"note":"D","duration":0.45},{"note":"C","duration":0.27863945578231292},{"note":"C","duration":0.4295691609977324},{"note":"D","duration":0.08126984126984127},{"note":"E","duration":0.49922902494331067},{"note":"F","duration":0.47600907029478456},{"note":"G","duration":0.4179591836734694},{"note":"G","duration":0.46439909297052157},{"note":"G","duration":0.67337868480725627},{"note":"G5","duration":0.058049886621315196},{"note":"G5","duration":0.08126984126984127},{"note":"G","duration":0.47600907029478456},{"note":"E","duration":0.069659863945578229},{"note":"E","duration":0.11609977324263039},{"note":"E","duration":0.45},{"note":"E","duration":0.45},{"note":"F","duration":0.47600907029478456},{"note":"D","duration":0.45},{"note":"D","duration":0.45},{"note":"C","duration":0.25541950113378686},{"note":"C5","duration":0.058049886621315196},{"note":"C","duration":0.301859410430839},{"note":"E","duration":0.48761904761904762},{"note":"G","duration":0.46439909297052157},{"note":"G","duration":0.46439909297052157},{"note":"C5","duration":0.15092970521541951},{"note":"C5","duration":0.17414965986394557},{"note":"C","duration":0.069659863945578229},{"note":"C","duration":0.45},{"note":"C","duration":0.45},{"note":"D","duration":0.2089795918367347},{"note":"C","duration":0.22058956916099773},{"note":"D","duration":0.40634920634920635},{"note":"D","duration":0.45},{"note":"D","duration":0.45},{"note":"E","duration":0.10448979591836735},{"note":"E","duration":0.069659863945578229},{"note":"F","duration":0.45},{"note":"F","duration":0.45},{"note":"E","duration":0.10448979591836735},{"note":"E","duration":0.058049886621315196},{"note":"E","duration":0.10448979591836735},{"note":"E","duration":0.45},{"note":"E","duration":0.45},{"note":"F","duration":0.49922902494331067},{"note":"G","duration":0.45},{"note":"G","duration":0.45},{"note":"G","duration":0.47600907029478456},{"note":"E","duration":0.11609977324263039},{"note":"E","duration":0.11609977324263039},{"note":"E","duration":0.45},{"note":"E","duration":0.45},{"note":"F","duration":0.48761904761904762},{"note":"D","duration":0.32507936507936508},{"note":"C","duration":0.11609977324263039},{"note":"D","duration":0.592108843537415},{"note":"C","duration":0.40634920634920635},{"note":"C5","duration":0.058049886621315196},{"note":"C","duration":0.29024943310657597},{"note":"E","duration":0.48761904761904762},{"note":"G","duration":0.39473922902494329},{"note":"C","duration":0.069659863945578229},{"note":"G","duration":0.37151927437641724},{"note":"C","duration":0.11609977324263039},{"note":"C5","duration":0.069659863945578229},{"note":"C","duration":0.615328798185941},{"note":"C5","duration":0.08126984126984127},{"note":"C","duration":0.11609977324263039},{"note":"C","duration":0.069659863945578229},{"note":"C","duration":0.39473922902494329},{"note":"C","duration":0.11609977324263039}]}
+{"notes":[
+{
+    "note":"G",
+    "duration":0.47600907029478456
+},
+{
+    "note":"E",
+    "duration":0.45
+},
+{
+    "note":"E",
+    "duration":0.45
+},
+{
+    "note":"F",
+    "duration":0.47600907029478456
+},
+{
+    "note":"D",
+    "duration":0.45
+},
+{
+    "note":"D",
+    "duration":0.45
+},
+{"note":"C","duration":0.27863945578231292},
+{"note":"C","duration":0.4295691609977324},
+{"note":"E","duration":0.49922902494331067},
+{"note":"F","duration":0.47600907029478456},
+{"note":"G","duration":0.4179591836734694},
+{"note":"G","duration":0.46439909297052157},
+{"note":"G","duration":0.67337868480725627},
+{"note":"G","duration":0.47600907029478456},
+{"note":"E","duration":0.11609977324263039},
+{"note":"E","duration":0.45},
+{"note":"E","duration":0.45},
+{"note":"F","duration":0.47600907029478456},
+{"note":"D","duration":0.45},
+{"note":"D","duration":0.45},
+{"note":"C","duration":0.25541950113378686},
+{"note":"C","duration":0.301859410430839},
+{"note":"E","duration":0.48761904761904762},
+{"note":"G","duration":0.46439909297052157},
+{"note":"G","duration":0.46439909297052157},
+{"note":"C5","duration":0.15092970521541951},
+{"note":"C5","duration":0.17414965986394557},
+{"note":"C","duration":0.45},
+{"note":"C","duration":0.45},
+{"note":"D","duration":0.2089795918367347},
+{"note":"C","duration":0.22058956916099773},
+{"note":"D","duration":0.40634920634920635},
+{"note":"D","duration":0.45},
+{"note":"D","duration":0.45},
+{"note":"E","duration":0.10448979591836735},
+{"note":"F","duration":0.45},
+{"note":"F","duration":0.45},{"note":"E","duration":0.10448979591836735},{"note":"E","duration":0.10448979591836735},{"note":"E","duration":0.45},{"note":"E","duration":0.45},{"note":"F","duration":0.49922902494331067},{"note":"G","duration":0.45},{"note":"G","duration":0.45},{"note":"G","duration":0.47600907029478456},{"note":"E","duration":0.11609977324263039},{"note":"E","duration":0.11609977324263039},{"note":"E","duration":0.45},{"note":"E","duration":0.45},{"note":"F","duration":0.48761904761904762},{"note":"D","duration":0.32507936507936508},{"note":"C","duration":0.11609977324263039},{"note":"D","duration":0.592108843537415},{"note":"C","duration":0.40634920634920635},{"note":"C","duration":0.29024943310657597},{"note":"E","duration":0.48761904761904762},{"note":"G","duration":0.39473922902494329},{"note":"G","duration":0.37151927437641724},{"note":"C","duration":0.11609977324263039},{"note":"C","duration":0.615328798185941},{"note":"C","duration":0.11609977324263039},{"note":"C","duration":0.39473922902494329},{"note":"C","duration":0.11609977324263039}]}
